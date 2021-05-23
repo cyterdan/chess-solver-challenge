@@ -1,4 +1,4 @@
-###N Queens with a twist
+### N Queens with a twist
 
 This project implements a small framework for solving the classical N-Queens 
 problem as well as variants on the problem
