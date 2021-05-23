@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id "application"
+}
+apply plugin: "java"
+
+group 'org.cyterdan'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //guava for advanced data structures
+    implementation("com.google.guava:guava:30.1.1-jre")
+    //jcolor for printing pretty colors in the output
+    implementation group: 'com.diogonunes', name: 'JColor', version: '5.0.1'
+    //lombok to reduce on boilerplate and avoid hash/equals bugs
+    implementation 'org.projectlombok:lombok:1.18.18'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    //picocli to handle cli params
+    implementation 'info.picocli:picocli:4.6.1'
+    annotationProcessor 'info.picocli:picocli-codegen:4.6.1'
+    //slf4j+logback implementation for logging
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.8.0-beta4'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha5'
+
+    //junit and assertj for testing
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation("org.assertj:assertj-core:3.11.1")
+}
+
+
+compileJava {
+    options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
+}
+
+application {
+    mainClass.set("org.cyterdan.chess.challenge.ChessSolver")
+}
+test {
+    useJUnitPlatform()
+}
