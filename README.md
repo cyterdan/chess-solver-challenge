@@ -43,7 +43,7 @@ for example, to place 3 knights on a standard board:
 ./gradlew run --args="-p KNIGHT -n 3 -b STANDARD"
 ```
 
-## Solving N queens
+## Solving N-Queens
 The provided implementation uses the standard backtracking approach
 to explore the legal placements, (checking both the individual piece threatening rules, and the board specific rules)
 backtracking when it has explored a branch fully until all solutions to the problem have been found.
