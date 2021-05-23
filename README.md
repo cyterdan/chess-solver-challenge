@@ -23,7 +23,7 @@ By default, the solver will run trying to place
 ./gradlew run
 ```
 
-there are 2 solutions that will be outputed to stdout (with color if supported by the terminal):
+There are 2 solutions that will be outputed to stdout (with color if supported by the terminal):
 
 ![alt text](run-4.png)
 
@@ -49,8 +49,8 @@ to explore the legal placements, (checking both the individual piece threatening
 backtracking when it has explored a branch fully until all solutions to the problem have been found.
 
 ## Limits and possible improvements
-- backtracking implementation is useful for finding all available solutions but is not efficient
+- Backtracking implementation is useful for finding all available solutions but is not efficient
 if the user instead desires finding a single solution as fast as possible (an approach based on constraint programming
   would be more appropriate for that use case).
   
-- the user has to wait for all solutions to be found, it would be better to report on solutions as they are found.
+- The user has to wait for all solutions to be found, it would be better to report on solutions as they are found.
